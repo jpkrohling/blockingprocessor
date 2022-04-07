@@ -1,4 +1,4 @@
-module github.com/jpkrohling/blocking-processor
+module github.com/jpkrohling/blockingprocessor
 
 go 1.18
 
