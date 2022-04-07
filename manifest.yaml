@@ -1,0 +1,24 @@
+dist:
+  module: github.com/jpkrohling/blocking-processor/dist
+  name: otelcol-blocking
+  description: OpenTelemetry Collector with a blocking processor
+  version: 0.0.1
+  output_path: ./_build
+  otelcol_version: 0.48.0
+
+receivers:
+  - import: go.opentelemetry.io/collector/receiver/otlpreceiver
+    gomod: go.opentelemetry.io/collector v0.48.0
+
+exporters:
+  - import: go.opentelemetry.io/collector/exporter/loggingexporter
+    gomod: go.opentelemetry.io/collector v0.48.0
+  - import: go.opentelemetry.io/collector/exporter/otlpexporter
+    gomod: go.opentelemetry.io/collector v0.48.0
+
+extensions:
+
+processors:
+  - import: go.opentelemetry.io/collector/processor/batchprocessor
+    gomod: go.opentelemetry.io/collector v0.48.0
+  - gomod: github.com/jpkrohling/blocking-processor main
