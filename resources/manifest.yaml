@@ -22,3 +22,5 @@ processors:
   - import: go.opentelemetry.io/collector/processor/batchprocessor
     gomod: go.opentelemetry.io/collector v0.48.0
   - gomod: github.com/jpkrohling/blockingprocessor main
+replaces: 
+  - github.com/jpkrohling/blockingprocessor => ../
